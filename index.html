@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>Это ToDo List</h1>
+		</div>
+	</header>
+
+	<div class="container container-todo">
+		<div class="todo">
+			<div class="todo__select">
+				<p>Для удобства добавлен фильтр задач:</p>
+				<select name="todo__select-item" class="todo__select-item">
+					<option value="0">Номер</option>
+					<option value="1">Дата</option>
+					<option value="2">Заголовок</option>
+					<option value="3">Выполненые</option>
+				</select>
+			</div>
+			<div><p>Нажмите на оглавление задачи, чтобы показать или скрыть подробное описание.</p></div>
+			<div class="todo__body">
+				<ul class="todo__body-list">
+				</ul>
+			</div>
+			<div class="todo__body-buttons">
+				<button type="button" class="todo__body_add-button">Добавить задачу</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="My.js"></script>
+</body>
+</html>
