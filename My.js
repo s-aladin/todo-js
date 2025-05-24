@@ -140,6 +140,37 @@ function showModal() {
     modal.addEventListener('submit', addTask);
 };
 
+function formatDate(date) {
+    const year = date.getFullYear();
+
+    let month = date.getMonth() + 1;
+    if (month <= 9) {
+        month = '0' + month;
+    }
+
+    let day = date.getDate();
+    if (day <= 9) {
+        day = '0' + day;
+    }
+
+    let hours = date.getHours();
+    if (hours <= 9) {
+        hours = '0' + hours;
+    }
+
+    let minutes = date.getMinutes();
+    if (minutes <= 9) {
+        minutes = '0' + minutes;
+    }
+
+    let seconds = date.getSeconds();
+    if (seconds <= 9) {
+        seconds = '0' + seconds;
+    }
+
+    return date = `${hours}:${minutes}:${seconds} ${day}/${month}/${year}`;
+}
+
 function addTask(e) {
     e.preventDefault();
 
@@ -165,37 +196,8 @@ function addTask(e) {
 
     const currentDate = new Date();
 
-    const year = currentDate.getFullYear();
-
-    let month = currentDate.getMonth() + 1;
-    if (month <= 9) {
-        month = '0' + month;
-    }
-
-    let day = currentDate.getDate();
-    if (day <= 9) {
-        day = '0' + day;
-    }
-
-    let hours = currentDate.getHours();
-    if (hours <= 9) {
-        hours = '0' + hours;
-    }
-
-    let minutes = currentDate.getMinutes();
-    if (minutes <= 9) {
-        minutes = '0' + minutes;
-    }
-
-    let seconds = currentDate.getSeconds();
-    if (seconds <= 9) {
-        seconds = '0' + seconds;
-    }
-
-    const date = `${hours}:${minutes}:${seconds} ${day}/${month}/${year}`;
-
     taskData.dateForSort = currentDate;
-    taskData.date = date;
+    taskData.date = formatDate(currentDate);
     taskData.done = false;
     taskData.textStatus = 'show';
 
